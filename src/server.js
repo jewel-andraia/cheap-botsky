@@ -148,8 +148,8 @@ fastify.post("/reset", async (request, reply) => {
   if (
     !request.body.key ||
     request.body.key.length < 1 ||
-    !process.env.ADMIN_KEY ||
-    request.body.key !== process.env.ADMIN_KEY
+    !process.env.SQLITE_ADMIN_KEY ||
+    request.body.key !== process.env.SQLITE_ADMIN_KEY
   ) {
     console.error("Auth fail");
 
