@@ -11,6 +11,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const { ATProtoPoster } = require('./cheap-botsky/atproto/models/post');
+
 // Require the fastify framework and instantiate it
 const fastify = require("fastify")({
   // Set this to true for detailed logging:
@@ -112,7 +114,6 @@ fastify.post("/", async (request, reply) => {
 });
 
 fastify.post("/test/post/atproto", async (request, reply) => {
-  const { ATProtoPoster } = require('./cheap-botsky/atproto/models/post');
   const poster = new ATProtoPoster();
   poster.authenticate();
   poster.post("hello world");

@@ -1,5 +1,5 @@
-import { BskyAgent, AtpSessionEvent, AtpSessionData } from '@atproto/api'
-const { CheapBotskyPoster } from '../../models';
+const { BskyAgent, AtpSessionEvent, AtpSessionData } = require('@atproto/api');
+const { CheapBotskyPoster } = require('../../models');
 
 export function ATProtoPoster() {
   // Statics
