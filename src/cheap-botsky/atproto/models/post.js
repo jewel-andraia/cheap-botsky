@@ -1,7 +1,7 @@
 const { BskyAgent, AtpSessionEvent, AtpSessionData } = require('@atproto/api');
 const { CheapBotskyPoster } = require('../../models');
 
-export function ATProtoPoster() {
+function ATProtoPoster() {
   // Statics
   socialBackend = 'atproto';
 }
