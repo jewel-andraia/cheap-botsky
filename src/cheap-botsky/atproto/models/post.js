@@ -19,7 +19,7 @@ ATProtoPoster.prototype.authenticate = async function(details) {
   
   if (!this.agent) {
     this.agent = new BskyAgent({
-      service: details.service;
+      service: details.service,
       persistSession: (evt: AtpSessionEvent, sess?: AtpSessionData) => {
         // store the session-data for reuse 
         this.session = session;
