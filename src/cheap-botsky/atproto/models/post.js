@@ -9,7 +9,7 @@ Object.setPrototypeOf(ATProtoPoster.prototype, CheapBotskyPoster.prototype);
 
 
 const defaultAuthenticateDetails = {
-  service: process.env.ATPROTO.TESTUSER_SERVICE;
+  service: process.env.ATPROTO.TESTUSER_SERVICE,
   identifier: process.env.ATPROTO_TESTUSER_IDENTIFIER,
   password: process.env.ATPROTO_TESTUSER_PASSWORD,
 };
