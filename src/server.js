@@ -111,6 +111,13 @@ fastify.post("/", async (request, reply) => {
     : reply.view("/src/pages/index.hbs", params);
 });
 
+fastify.post("/test/post/atproto", async (request, reply) => {
+  const { ATProtoPoster } = require('./cheap-botsky/atproto/models/post');
+  const poster = new ATProtoPoster();
+  poster.authenticate();
+  poster.post("hello world");
+});
+
 /**
  * Admin endpoint returns log of votes
  *

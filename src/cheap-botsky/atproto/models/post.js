@@ -1,7 +1,7 @@
 import { BskyAgent, AtpSessionEvent, AtpSessionData } from '@atproto/api'
 const { CheapBotskyPoster } from '../../models';
 
-function ATProtoPoster() {
+export function ATProtoPoster() {
   // Statics
   socialBackend = 'atproto';
 }
@@ -9,13 +9,13 @@ Object.setPrototypeOf(ATProtoPoster.prototype, CheapBotskyPoster.prototype);
 
 
 const defaultAuthenticateDetails = {
-  service: 'bsky.app',
+  service: process.env.ATPROTO.TESTUSER_SERVICE;
   identifier: process.env.ATPROTO_TESTUSER_IDENTIFIER,
   password: process.env.ATPROTO_TESTUSER_PASSWORD,
 };
 
 ATProtoPoster.prototype.authenticate = async function(details) {
-  details = Object.extend(details, defaultAuthenticateDetails);
+  details = Object.extend(details || {}, defaultAuthenticateDetails);
   
   if (!this.agent) {
     this.agent = new BskyAgent({
